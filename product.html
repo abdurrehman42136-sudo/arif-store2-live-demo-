@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>All Products | Arif Store</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    :root { --primary: #e63946; --dark: #1d3557; }
+    body { font-family: 'Poppins', sans-serif; background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); padding-top: 90px; }
+    .navbar { background: rgba(255,255,255,0.97) !important; backdrop-filter: blur(12px); box-shadow: 0 8px 32px rgba(0,0,0,0.1); }
+    .section-title { font-weight: 700; font-size: 2.3rem; position: relative; display: inline-block; padding-bottom: 15px; margin-bottom: 3rem; }
+    .section-title::after { content: ''; position: absolute; width: 100px; height: 5px; background: var(--primary); bottom: 0; left: 50%; transform: translateX(-50%); border-radius: 3px; }
+    .product-card { background: white; border-radius: 20px; overflow: hidden; transition: all 0.4s ease; box-shadow: 0 10px 30px rgba(0,0,0,0.1); position: relative; }
+    .product-card:hover { transform: translateY(-15px); box-shadow: 0 25px 50px rgba(0,0,0,0.2); }
+    .product-card img { height: 220px; object-fit: cover; transition: 0.4s; }
+    .product-card:hover img { transform: scale(1.1); }
+    .badge-sale { background: #e63946; color: white; }
+    .price { font-size: 1.4rem; font-weight: 700; color: var(--primary); }
+    .old-price { text-decoration: line-through; color: #999; font-size: 0.95rem; }
+    .btn-add { background: var(--primary); border: none; border-radius: 50px; padding: 11px 20px; font-weight: 600; transition: 0.3s; color: white; }
+    .btn-add:hover { background: #c1121f; transform: scale(1.05); }
+    .whatsapp-float { position: fixed; bottom: 25px; right: 25px; width: 62px; height: 62px; background: #25d366; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 34px; box-shadow: 0 5px 25px rgba(0,0,0,0.4); z-index: 1000; animation: pulse 2s infinite; }
+    @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.7); } 70% { box-shadow: 0 0 0 18px rgba(37,211,102,0); } 100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); } }
+  </style>
+</head>
+<body>
+
+<a href="https://wa.me/923439851166" target="_blank" class="whatsapp-float">
+  <i class="fab fa-whatsapp"></i>
+</a>
+
+<nav class="navbar navbar-expand-lg fixed-top py-3">
+  <div class="container">
+    <a class="navbar-brand fw-bold fs-3" href="index.html">
+      <img src="logos/Dark Brown and Brown Initial Studio Logo Design.png" width="50" height="50" alt="Arif Store">
+      <span class="text-primary ms-2">Arif Store</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNav">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title">Menu</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav mx-auto fw-medium">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active text-primary fw-bold" href="product.html">Products</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+        <a href="cart.html" class="btn btn-outline-primary rounded-pill px-4 position-relative">
+          <i class="fas fa-shopping-cart"></i> Cart
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cart-badge cart-count">0</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="container my-5">
+
+  <div class="text-center mb-5">
+    <h1 class="section-title">All Products</h1>
+    <p class="lead text-muted">Fresh Grocery • Personal Care • Household • Beverages – Sab Ek Jagah!</p>
+  </div>
+
+  <!-- Search Bar -->
+  <div class="row justify-content-center mb-5">
+    <div class="col-lg-7">
+      <div class="input-group input-group-lg">
+        <input type="text" class="form-control rounded-pill shadow-sm" placeholder="Search products... (e.g. Dalda Oil, Pepsi, Dove)">
+        <button class="btn btn-primary rounded-pill px-5"><i class="fas fa-search"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 1. COOKING OIL -->
+  <h2 class="section-title text-center">Cooking Oil</h2>
+  <div class="row g-4 mb-5">
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="product-card h-100">
+        <span class="badge badge-sale position-absolute top-0 end-0 m-3">-15%</span>
+        <img src="./images/oil shama.jpeg" alt="Shama Oil">
+        <div class="p-4 text-center">
+          <h5>Shama Oil</h5>
+          <p class="text-muted small">5 Liter</p>
+          <div><span class="price">Rs 1,399</span> <span class="old-price">Rs 1,649</span></div>
+          <button class="btn btn-add w-100 mt-3 add-to-cart"
+                  data-id="shama-oil-5l"
+                  data-title="Shama Oil"
+                  data-price="1399"
+                  data-img="./images/oil shama.jpeg">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="product-card h-100">
+        <img src="./images/oil soya supreme.jpeg" alt="Soya Supreme">
+        <div class="p-4 text-center">
+          <h5>Soya Supreme</h5>
+          <p class="text-muted small">5 Liter</p>
+          <div><span class="price">Rs 1,599</span></div>
+          <button class="btn btn-add w-100 mt-3 add-to-cart"
+                  data-id="soya-supreme-5l"
+                  data-title="Soya Supreme"
+                  data-price="1599"
+                  data-img="./images/oil soya supreme.jpeg">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="product-card h-100">
+        <img src="images/daldaoil.jpeg" alt="Dalda Oil">
+        <div class="p-4 text-center">
+          <h5>Dalda Oil</h5>
+          <p class="text-muted small">5 Liter Tin</p>
+          <div><span class="price">Rs 1,480</span></div>
+          <button class="btn btn-add w-100 mt-3 add-to-cart"
+                  data-id="dalda-oil-5l"
+                  data-title="Dalda Oil"
+                  data-price="1480"
+                  data-img="images/daldaoil.jpeg">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="product-card h-100">
+        <img src="images/oil rabi.jpeg" alt="Rabi Oil">
+        <div class="p-4 text-center">
+          <h5>Rabi Oil</h5>
+          <p class="text-muted small">5 Liter</p>
+          <div><span class="price">Rs 1,420</span></div>
+          <button class="btn btn-add w-100 mt-3 add-to-cart"
+                  data-id="rabi-oil-5l"
+                  data-title="Rabi Oil"
+                  data-price="1420"
+                  data-img="images/oil rabi.jpeg">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- باقی تمام سیکشنز (Rice سے Face Wash تک) بھی ایسے ہی data attributes کے ساتھ تبدیل کر دیے گئے ہیں -->
+
+  <!-- 2. RICE -->
+  <h2 class="section-title text-center">Rice</h2>
+  <div class="row g-4 mb-5">
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="product-card h-100">
+        <img src="images/basmati rice.jpeg" alt="Royal Basmati">
+        <div class="p-4 text-center">
+          <h5>Royal Basmati</h5>
+          <p class="text-muted small">5kg</p>
+          <div><span class="price">Rs 950</span></div>
+          <button class="btn btn-add w-100 mt-3 add-to-cart"
+                  data-id="royal-basmati-5kg"
+                  data-title="Royal Basmati"
+                  data-price="950"
+                  data-img="images/basmati rice.jpeg">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="product-card h-100">
+        <img src="images/ideal rice.jpeg" alt="Ideal Rice">
+        <div class="p-4 text-center">
+          <h5>Ideal Rice</h5>
+          <p class="text-muted small">10kg</p>
+          <div><span class="price">Rs 1,199</span></div>
+          <button class="btn btn-add w-100 mt-3 add-to-cart"
+                  data-id="ideal-rice-10kg"
+                  data-title="Ideal Rice"
+                  data-price="1199"
+                  data-img="images/ideal rice.jpeg">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="product-card h-100">
+        <img src="images/white rice.jpeg" alt="White Rice">
+        <div class="p-4 text-center">
+          <h5>White Rice</h5>
+          <p class="text-muted small">10kg</p>
+          <div><span class="price">Rs 799</span></div>
+          <button class="btn btn-add w-100 mt-3 add-to-cart"
+                  data-id="white-rice-10kg"
+                  data-title="White Rice"
+                  data-price="799"
+                  data-img="images/white rice.jpeg">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="product-card h-100">
+        <img src="images/mughal rice.jpeg" alt="Mughal Rice">
+        <div class="p-4 text-center">
+          <h5>Mughal Super Basmati</h5>
+          <p class="text-muted small">5kg</p>
+          <div><span class="price">Rs 1,050</span></div>
+          <button class="btn btn-add w-100 mt-3 add-to-cart"
+                  data-id="mughal-super-basmati-5kg"
+                  data-title="Mughal Super Basmati"
+                  data-price="1050"
+                  data-img="images/mughal rice.jpeg">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. SHAMPOO -->
+  <h2 class="section-title text-center">Shampoo</h2>
+  <div class="row g-4 mb-5">
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="product-card h-100">
+        <img src="images/head shoulder shampoo.jpeg" alt="Head & Shoulders">
+        <div class="p-4 text-center">
+          <h5>Head & Shoulders</h5>
+          <p class="text-muted small">680ml</p>
+          <div><span class="price">Rs 549</span></div>
+          <button class="btn btn-add w-100 mt-3 add-to-cart"
+                  data-id="head-shoulders-680ml"
+                  data-title="Head & Shoulders"
+                  data-price="549"
+                  data-img="images/head shoulder shampoo.jpeg">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="product-card h-100">
+        <img src="images/lifebouy2.jpeg" alt="Lifebuoy">
+        <div class="p-4 text-center">
+          <h5>Lifebuoy Shampoo</h5>
+          <p class="text-muted small">650ml</p>
+          <div><span class="price">Rs 399</span></div>
+          <button class="btn btn-add w-100 mt-3 add-to-cart"
+                  data-id="lifebuoy-shampoo-650ml"
+                  data-title="Lifebuoy Shampoo"
+                  data-price="399"
+                  data-img="images/lifebouy2.jpeg">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="product-card h-100">
+        <img src="images/sunslik shampoo.jpeg" alt="Sunsilk">
+        <div class="p-4 text-center">
+          <h5>Sunsilk Black</h5>
+          <p class="text-muted small">650ml</p>
+          <div><span class="price">Rs 420</span></div>
+          <button class="btn btn-add w-100 mt-3 add-to-cart"
+                  data-id="sunsilk-black-650ml"
+                  data-title="Sunsilk Black"
+                  data-price="420"
+                  data-img="images/sunslik shampoo.jpeg">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="product-card h-100">
+        <img src="images/dove shampoo.jpeg" alt="Dove">
+        <div class="p-4 text-center">
+          <h5>Dove Intense Repair</h5>
+          <p class="text-muted small">680ml</p>
+          <div><span class="price">Rs 499</span></div>
+          <button class="btn btn-add w-100 mt-3 add-to-cart"
+                  data-id="dove-intense-repair-680ml"
+                  data-title="Dove Intense Repair"
+                  data-price="499"
+                  data-img="images/dove shampoo.jpeg">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. SOAP -->
+  <h2 class="section-title text-center">Soap</h2>
+  <div class="row g-4 mb-5">
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="product-card h-100">
+        <img src="images/safeguard soap.jpeg" alt="Safeguard">
+        <div class="p-4 text-center">
+          <h5>Safeguard</h5>
+          <p class="text-muted small">Pack of 4</p>
+          <div><span class="price">Rs 299</span></div>
+          <button class="btn btn-add w-100 mt-3 add-to-cart"
+                  data-id="safeguard-pack4"
+                  data-title="Safeguard"
+                  data-price="299"
+                  data-img="images/safeguard soap.jpeg">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="product-card h-100">
+        <img src="images/lux soap.webp" alt="Lux">
+        <div class="p-4 text-center">
+          <h5>Lux</h5>
+          <p class="text-muted small">Pack of 5</p>
+          <div><span class="price">Rs 349</span></div>
+          <button class="btn btn-add w-100 mt-3 add-to-cart"
+                  data-id="lux-pack5"
+                  data-title="Lux"
+                  data-price="349"
+                  data-img="images/lux soap.webp">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="product-card h-100">
+        <img src="images/lifebouy soap.jpeg" alt="Lifebuoy">
+        <div class="p-4 text-center">
+          <h5>Lifebuoy</h5>
+          <p class="text-muted small">Pack of 4</p>
+          <div><span class="price">Rs 279</span></div>
+          <button class="btn btn-add w-100 mt-3 add-to-cart"
+                  data-id="lifebouy-pack4"
+                  data-title="Lifebuoy"
+                  data-price="279"
+                  data-img="images/lifebouy soap.jpeg">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="product-card h-100">
+        <img src="images/palmolive soap.jpeg" alt="Palmolive">
+        <div class="p-4 text-center">
+          <h5>Palmolive</h5>
+          <p class="text-muted small">Pack of 3</p>
+          <div><span class="price">Rs 399</span></div>
+          <button class="btn btn-add w-100 mt-3 add-to-cart"
+                  data-id="palmolive-pack3"
+                  data-title="Palmolive"
+                  data-price="399"
+                  data-img="images/palmolive soap.jpeg">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. DISH CLEANING -->
+  <h2 class="section-title text-center">Dish Cleaning</h2>
+  <div class="row g-4 mb-5">
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="product-card h-100">
+        <img src="images/max 1.jpeg" alt="Max">
+        <div class="p-4 text-center">
+          <h5>Max Dish Bar</h5>
+          <p class="text-muted small">750g</p>
+          <div><span class="price">Rs 149</span></div>
+          <button class="btn btn-add w-100 mt-3 add-to-cart"
+                  data-id="max-dish-bar-750g"
+                  data-title="Max Dish Bar"
+                  data-price="149"
+                  data-img="images/max 1.jpeg">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="product-card h-100">
+        <img src="images/vim 1.jpeg" alt="Vim">
+        <div class="p-4 text-center">
+          <h5>Vim Liquid</h5>
+          <p class="text-muted small">1 Liter</p>
+          <div><span class="price">Rs 199</span></div>
+          <button class="btn btn-add w-100 mt-3 add-to-cart"
+                  data-id="vim-liquid-1l"
+                  data-title="Vim Liquid"
+                  data-price="199"
+                  data-img="images/vim 1.jpeg">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="product-card h-100">
+        <img src="./images/dawn 1.jpeg" alt="Dawn">
+        <div class="p-4 text-center">
+          <h5>Dawn Dishwash</h5>
+          <p class="text-muted small">500ml</p>
+          <div><span class="price">Rs 179</span></div>
+          <button class="btn btn-add w-100 mt-3 add-to-cart"
+                  data-id="dawn-dishwash-500ml"
+                  data-title="Dawn Dishwash"
+                  data-price="179"
+                  data-img="./images/dawn 1.jpeg">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="product-card h-100">
+        <img src="images/FAIRY 1.jpeg" alt="Fairy">
+        <div class="p-4 text-center">
+          <h5>Fairy Liquid</h5>
+          <p class="text-muted small">1 Liter</p>
+          <div><span class="price">Rs 399</span></div>
+          <button class="btn btn-add w-100 mt-3 add-to-cart"
+                  data-id="fairy-liquid-1l"
+                  data-title="Fairy Liquid"
+                  data-price="399"
+                  data-img="images/FAIRY 1.jpeg">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. BISCUITS -->
+  <h2 class="section-title text-center">Biscuits</h2>
+  <div class="row g-4 mb-5">
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="product-card h-100">
+        <img src="images/super.jpeg" alt="Sooper">
+        <div class="p-4 text-center">
+          <h5>Sooper</h5>
+          <p class="text-muted small">Family Pack</p>
+          <div><span class="price">Rs 120</span></div>
+          <button class="btn btn-add w-100 mt-3 add-to-cart"
+                  data-id="sooper-family-pack"
+                  data-title="Sooper"
+                  data-price="120"
+                  data-img="images/super.jpeg">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="product-card h-100">
+        <img src="images/rio.jpeg" alt="Rio">
+        <div class="p-4 text-center">
+          <h5>Rio</h5>
+          <p class="text-muted small">Pack of 12</p>
+          <div><span class="price">Rs 150</span></div>
+          <button class="btn btn-add w-100 mt-3 add-to-cart"
+                  data-id="rio-pack12"
+                  data-title="Rio"
+                  data-price="150"
+                  data-img="images/rio.jpeg">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="product-card h-100">
+        <img src="images/tuc.jpeg" alt="Tuc">
+        <div class="p-4 text-center">
+          <h5>Tuc</h5>
+          <p class="text-muted small">Pack of 6</p>
+          <div><span class="price">Rs 100</span></div>
+          <button class="btn btn-add w-100 mt-3 add-to-cart"
+                  data-id="tuc-pack6"
+                  data-title="Tuc"
+                  data-price="100"
+                  data-img="images/tuc.jpeg">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="product-card h-100">
+        <img src="images/peanut.jpeg" alt="Peanut">
+        <div class="p-4 text-center">
+          <h5>Peanut Pik</h5>
+          <p class="text-muted small">Family Pack</p>
+          <div><span class="price">Rs 130</span></div>
+          <button class="btn btn-add w-100 mt-3 add-to-cart"
+                  data-id="peanut-pik-family"
+                  data-title="Peanut Pik"
+                  data-price="130"
+                  data-img="images/peanut.jpeg">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. SURF / DETERGENT -->
+  <h2 class="section-title text-center">Surf / Detergent</h2>
+  <div class="row g-4 mb-5">
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="product-card h-100">
+        <img src="images/ariel.jpeg" alt="Ariel">
+        <div class="p-4 text-center">
+          <h5>Ariel</h5>
+          <p class="text-muted small">2kg</p>
+          <div><span class="price">Rs 799</span></div>
+          <button class="btn btn-add w-100 mt-3 add-to-cart"
+                  data-id="ariel-2kg"
+                  data-title="Ariel"
+                  data-price="799"
+                  data-img="images/ariel.jpeg">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="product-card h-100">
+        <img src="images/brite.jpeg" alt="Brite">
+        <div class="p-4 text-center">
+          <h5>Brite</h5>
+          <p class="text-muted small">1kg</p>
+          <div><span class="price">Rs 399</span></div>
+          <button class="btn btn-add w-100 mt-3 add-to-cart"
+                  data-id="brite-1kg"
+                  data-title="Brite"
+                  data-price="399"
+                  data-img="images/brite.jpeg">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="product-card h-100">
+        <img src="images/rin.jpeg" alt="Rin">
+        <div class="p-4 text-center">
+          <h5>Rin</h5>
+          <p class="text-muted small">2kg</p>
+          <div><span class="price">Rs 649</span></div>
+          <button class="btn btn-add w-100 mt-3 add-to-cart"
+                  data-id="rin-2kg"
+                  data-title="Rin"
+                  data-price="649"
+                  data-img="images/rin.jpeg">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="product-card h-100">
+        <img src="images/surfexcel.jpeg" alt="Surf Excel">
+        <div class="p-4 text-center">
+          <h5>Surf Excel</h5>
+          <p class="text-muted small">2kg</p>
+          <div><span class="price">Rs 899</span></div>
+          <button class="btn btn-add w-100 mt-3 add-to-cart"
+                  data-id="surf-excel-2kg"
+                  data-title="Surf Excel"
+                  data-price="899"
+                  data-img="images/surfexcel.jpeg">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. COLD DRINKS -->
+  <h2 class="section-title text-center">Cold Drinks</h2>
+  <div class="row g-4 mb-5">
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="product-card h-100">
+        <img src="images/pepsi.jpeg" alt="Pepsi">
+        <div class="p-4 text-center">
+          <h5>Pepsi</h5>
+          <p class="text-muted small">1.5 Liter</p>
+          <div><span class="price">Rs 90</span></div>
+          <button class="btn btn-add w-100 mt-3 add-to-cart"
+                  data-id="pepsi-1.5l"
+                  data-title="Pepsi"
+                  data-price="90"
+                  data-img="images/pepsi.jpeg">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="product-card h-100">
+        <img src="images/coca&cola 1.jpeg" alt="Coca Cola">
+        <div class="p-4 text-center">
+          <h5>Coca Cola</h5>
+          <p class="text-muted small">1.5 Liter</p>
+          <div><span class="price">Rs 95</span></div>
+          <button class="btn btn-add w-100 mt-3 add-to-cart"
+                  data-id="cocacola-1.5l"
+                  data-title="Coca Cola"
+                  data-price="95"
+                  data-img="images/coca&cola 1.jpeg">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="product-card h-100">
+        <img src="images/7up.jpeg" alt="7UP">
+        <div class="p-4 text-center">
+          <h5>7UP</h5>
+          <p class="text-muted small">1.5 Liter</p>
+          <div><span class="price">Rs 85</span></div>
+          <button class="btn btn-add w-100 mt-3 add-to-cart"
+                  data-id="7up-1.5l"
+                  data-title="7UP"
+                  data-price="85"
+                  data-img="images/7up.jpeg">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="product-card h-100">
+        <img src="images/dew1.jpeg" alt="Mountain Dew">
+        <div class="p-4 text-center">
+          <h5>Mountain Dew</h5>
+          <p class="text-muted small">1.5 Liter</p>
+          <div><span class="price">Rs 90</span></div>
+          <button class="btn btn-add w-100 mt-3 add-to-cart"
+                  data-id="mountain-dew-1.5l"
+                  data-title="Mountain Dew"
+                  data-price="90"
+                  data-img="images/dew1.jpeg">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 9. FACE WASH -->
+  <h2 class="section-title text-center">Face Wash</h2>
+  <div class="row g-4 mb-5">
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="product-card h-100">
+        <img src="images/ponds facewash.jpeg" alt="Ponds">
+        <div class="p-4 text-center">
+          <h5>Ponds Face Wash</h5>
+          <p class="text-muted small">100g</p>
+          <div><span class="price">Rs 249</span></div>
+          <button class="btn btn-add w-100 mt-3 add-to-cart"
+                  data-id="ponds-facewash-100g"
+                  data-title="Ponds Face Wash"
+                  data-price="249"
+                  data-img="images/ponds facewash.jpeg">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="product-card h-100">
+        <img src="images/golden pearl.jpeg" alt="Golden Pearl">
+        <div class="p-4 text-center">
+          <h5>Golden Pearl</h5>
+          <p class="text-muted small">150ml</p>
+          <div><span class="price">Rs 399</span></div>
+          <button class="btn btn-add w-100 mt-3 add-to-cart"
+                  data-id="golden-pearl-150ml"
+                  data-title="Golden Pearl"
+                  data-price="399"
+                  data-img="images/golden pearl.jpeg">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="product-card h-100">
+        <img src="./images/facewash.jpg" alt="Clearstem">
+        <div class="p-4 text-center">
+          <h5>Clearstem</h5>
+          <p class="text-muted small">100ml</p>
+          <div><span class="price">Rs 329</span></div>
+          <button class="btn btn-add w-100 mt-3 add-to-cart"
+                  data-id="clearstem-100ml"
+                  data-title="Clearstem"
+                  data-price="329"
+                  data-img="./images/facewash.jpg">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-6 col-md-4 col-lg-3">
+      <div class="product-card h-100">
+        <img src="./images/fair lovely.jpeg" alt="Fair & Lovely">
+        <div class="p-4 text-center">
+          <h5>Fair & Lovely</h5>
+          <p class="text-muted small">100g</p>
+          <div><span class="price">Rs 199</span></div>
+          <button class="btn btn-add w-100 mt-3 add-to-cart"
+                  data-id="fair-lovely-100g"
+                  data-title="Fair & Lovely"
+                  data-price="199"
+                  data-img="./images/fair lovely.jpeg">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer class="py-5 text-white" style="background: #1d3557;">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h4><img src="images/logo.png" height="50" alt=""> Arif Store</h4>
+        <p>Your trusted local store for daily needs.</p>
+      </div>
+      <div class="col-md-4">
+        <h5>Quick Links</h5>
+        <ul class="list-unstyled">
+          <li><a href="index.html" class="text-white">Home</a></li>
+          <li><a href="product.html" class="text-white">Products</a></li>
+          <li><a href="about.html" class="text-white">About</a></li>
+          <li><a href="./contact .html" class="text-white">Contact</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4 text-md-end">
+        <h5>Connect With Us</h5>
+        <div class="fs-3">
+          <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="text-white me-3"><i class="fab fa-facebook"></i></a>
+          <a href="https://wa.me/923439851166" class="text-white"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <p class="text-center mb-0">© 2025 Arif Store • Made with ❤️ in Pakistan</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+// یہ script کارٹ میں چیز ڈالے گی + کارٹ کا نمبر اپ ڈیٹ کرے گی + نئی ٹیب کھولے گی
+
+document.addEventListener('DOMContentLoaded', () => {
+  updateCartCount();  // کارٹ کا نمبر دکھانا شروع کرے
+
+  // تمام Add to Cart بٹنوں پر کلک سننے کا کام
+  document.querySelectorAll('.add-to-cart').forEach(button => {
+    button.addEventListener('click', function() {
+
+      // بٹن سے ڈیٹا لے لو
+      const id    = this.dataset.id;
+      const title = this.dataset.title;
+      const price = parseFloat(this.dataset.price);
+      const img   = this.dataset.img;
+
+      // اگر کوئی ڈیٹا مس ہو تو ایرر چیک
+      if (!id || !title || !price) {
+        alert("کچھ غلط ہے، دوبارہ ٹرائی کرو");
+        return;
+      }
+
+      // localStorage سے پرانا کارٹ لے لو
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+      // چیک کرو کہ یہ چیز پہلے ہے یا نہیں
+      let existingItem = cart.find(item => item.id === id);
+
+      if (existingItem) {
+        existingItem.quantity += 1;  // پہلے سے ہے تو تعداد بڑھا دو
+      } else {
+        cart.push({ id, title, price, quantity: 1, img });  // نیا ہے تو شامل کرو
+      }
+
+      // کارٹ کو سیو کر دو
+      localStorage.setItem("cart", JSON.stringify(cart));
+
+      // کارٹ کا نمبر اپ ڈیٹ کرو
+      updateCartCount();
+
+      // بٹن پر "Added ✓" دکھاؤ (2 سیکنڈ کے لیے)
+      const oldText = this.innerText;
+      this.innerText = "Added ✓";
+      setTimeout(() => { this.innerText = oldText; }, 1500);
+
+      // نئی ٹیب میں پروڈکٹ ڈیٹیل کھولو
+      const detailPage = `product-detail.html?id=${id}`;
+      window.open(detailPage, '_blank');
+    });
+  });
+});
+
+// کارٹ کا نمبر دکھانے والا فنکشن
+function updateCartCount() {
+  let cart = JSON.parse(localStorage.getItem("cart")) || [];
+  let totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+  
+  // تمام جگہوں پر نمبر تبدیل کرو (جیسے Cart (0))
+  document.querySelectorAll('.cart-count, .cart-badge').forEach(el => {
+    el.textContent = totalItems;
+  });
+}
+</script>
+
+</body>
+</html>
